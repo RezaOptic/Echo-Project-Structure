@@ -1,0 +1,43 @@
+swagger: '2.0'
+info:
+  title: Service API
+  description: Restful APIs for service.
+  version: "1.0.0"
+host: ""
+schemes:
+  - http
+  - https
+basePath: /
+produces:
+  - application/json
+paths:
+  /ping:
+    post:
+      summary: create ping object
+      parameters:
+        - in: header
+          name: Authorization
+          description: securityDefinitions, security jwt token
+          type: string
+          required: true
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/Ping'
+      responses:
+        201:
+          description: ping created
+        401:
+          description: Authorization Error
+        403:
+          description: Forbiden Error
+        400:
+          description: Validation Error
+
+definitions:
+  Ping:
+    type: object
+    properties:
+      ping:
+        description: ping string
+        type: string
