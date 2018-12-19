@@ -1,2 +1,2 @@
-# Echo-Project-Structure
-sample golang/echo project structure
+# Echo Project Structure
+## A Sample Structure for golang/echo projects
